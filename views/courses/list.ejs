@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('../partials/head') %> 
+    
+    <body class="home">
+        <%- include('../partials/header') %> 
+<body>
+    <h1>Lista de Cursos</h1>
+    <section class="home__main__section--productos">
+        <% courses.forEach(({id,title,price,description,chef,image})=>{ %>
+            <article class="home__main__section--productos__article animate__animated">
+                <img src="/images/cursos/<%= image %>" alt="imagen de <%= title %>">
+                <div class="home__main__section__article--contenido">
+                <h4><%= title %></h4>
+                <p><%= description %></p>
+                <p><%= price %></p>
+                <p><%= chef %></p>
+                <a href="/courses/detail/<%= id %>">Ver más</a>
+                </div>
+            </article>
+            <% }) %>
+
+    </section>
+      <!-- pie de página -->
+  <%- include('../partials/footer') %> 
+</body>
+</html>
